@@ -17,6 +17,19 @@ const app = new Vue({
         isActive(index) {
             return this.currentIndex === index ? 'active' : '';
         },
-
+        increaseIndex() {
+            if (this.currentIndex === this.img.length - 1) {
+                this.currentIndex = 0;
+            } else {
+                this.currentIndex++;
+            }
+        },
+        decreaseIndex() {
+            if (this.currentIndex === 0) {
+                this.currentIndex = this.img.length - 1;
+            } else {
+                this.currentIndex--;
+            }
+        },
     },
 })
